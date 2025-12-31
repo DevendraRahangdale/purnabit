@@ -1,0 +1,144 @@
+/* ================= GOOGLE FONT ================= */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* ================= TAILWIND ================= */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================= ROOT THEME ================= */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Dark mode (system based) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* ================= GLOBAL STYLES ================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent horizontal scroll */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ================= COMMON ELEMENT FIXES ================= */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ================= REUSABLE COMPONENT CLASSES ================= */
+.btn {
+  @apply px-4 py-2 rounded-md font-medium transition duration-300;
+}
+
+.btn-primary {
+  @apply bg-yellow-400 text-black hover:bg-yellow-300;
+}
+
+.btn-outline {
+  @apply border border-gray-300 text-white hover:bg-gray-800;
+}
+
+/* ================= ANIMATIONS ================= */
+
+/* Fade Up */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.9s ease-out forwards;
+}
+
+/* Fade Left */
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeLeft {
+  animation: fadeLeft 0.9s ease-out forwards;
+}
+
+/* Fade Right */
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeRight {
+  animation: fadeRight 0.9s ease-out forwards;
+}
+
+/* Zoom Slow (Background effect) */
+@keyframes zoomSlow {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.animate-zoomSlow {
+  animation: zoomSlow 6s ease-in-out forwards;
+}
+
+/* Animation Delay */
+.delay-200 {
+  animation-delay: 0.2s;
+}
