@@ -39,35 +39,33 @@ export default function ITPage() {
   </button>
 </div>
 
+{/* ================= HERO BANNER ================= */}
+<section
+  className="
+    relative min-h-[70vh]
+    flex items-center justify-center
+    bg-cover bg-center
+    pt-28 pb-20
+  "
+  style={{ backgroundImage: "url('/Background 1.jpg')" }}
+>
+  {/* Dark overlay for text visibility */}
+  {/* <div className="absolute inset-0 bg-black/65"></div> */}
 
-        {/* ================= HERO ================= */}
-        <section className="relative bg-gradient-to-br from-gray-100 to-gray-200 pt-28 pb-20">
-          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+  {/* Content */}
+  <div className="relative z-10 max-w-4xl mx-auto px-6 text-center animate-fade-up">
+    <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-black">
+      Enterprise <span className="text-orange-600">IT Services</span>
+    </h1>
 
-            {/* LEFT */}
-            <div className="animate-fade-left">
-              <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-gray-900">
-                Enterprise <span className="text-orange-600">IT Services</span>
-              </h1>
+    <p className="text-base md:text-lg text-black leading-relaxed max-w-3xl mx-auto">
+      We deliver reliable, secure, and scalable IT solutions that help
+      organizations grow, improve operational efficiency, and achieve
+      long-term digital transformation with confidence.
+    </p>
+  </div>
+</section>
 
-              <p className="text-lg text-gray-700 leading-relaxed max-w-xl">
-                We deliver reliable, secure, and scalable IT solutions that help
-                organizations grow, improve operational efficiency, and achieve
-                long-term digital transformation with confidence.
-              </p>
-            </div>
-
-            {/* RIGHT IMAGE */}
-            <div className="animate-fade-right relative w-full h-[320px] md:h-[420px] rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="/It_service1.png"
-                alt="IT Services"
-                className="w-full h-full object-cover hover:scale-105 transition duration-700"
-              />
-            </div>
-
-          </div>
-        </section>
 
         {/* ================= SECTION 1 ================= */}
         <section className="py-20 px-6 bg-white">
@@ -123,7 +121,7 @@ export default function ITPage() {
         </section>
 
         {/* ================= DELIVERY MODEL ================= */}
-        <section className="py-20 px-4 bg-[#cecdcd]">
+        <section className="py-20 px-4 bg-[#faf1c6]">
           <div className="max-w-7xl mx-auto">
 
             <h2 className="text-4xl font-bold mb-8 animate-fade-up">
@@ -236,9 +234,9 @@ export default function ITPage() {
 
           <button
             className="
-              group px-10 py-4 bg-blue-600 text-white
+              group px-10 py-4 bg-orange-600 text-white
               font-semibold rounded-md
-              hover:bg-blue-700 hover:shadow-lg
+              hover:bg-orange-700 hover:shadow-lg
               transition-all duration-300
             "
           >

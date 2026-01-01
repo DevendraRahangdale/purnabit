@@ -10,18 +10,11 @@ export default function Hero() {
         bg-cover bg-center scroll-mt-24
         overflow-hidden
       "
-      style={{ backgroundImage: "url('/heroimg1.png')" }}
+      style={{ backgroundImage: "url('/Background 3.jpg')" }}
     >
-      {/* Background zoom animation */}
-      <motion.div
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1.8, ease: "easeOut" }}
-        className="absolute inset-0"
-      />
+      {/* Dark gradient overlay for readability */}
+     
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/70"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl text-center px-6">
@@ -30,7 +23,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-xs tracking-widest text-gray-300 mb-4"
+          className="text-xs tracking-widest text-white mb-4"
         >
           DIGITAL TRANSFORMATION & TECHNOLOGY CONSULTING
         </motion.p>
@@ -67,7 +60,7 @@ export default function Hero() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="text-[#e2430e]"
+              className="text-orange-600"
             >
               intelligent technology
             </motion.span>
@@ -79,7 +72,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.4 }}
-          className="text-gray-300 mt-6 text-sm md:text-base leading-relaxed"
+          className="text-[clamp(1rem,1.1vw,1.125rem)] font-medium leading-loose text-white"
         >
           PurnaBIT is a technology consulting company that partners with
           organizations to design, build, and scale secure digital solutions.
@@ -98,7 +91,7 @@ export default function Hero() {
               transition: { staggerChildren: 0.2, delayChildren: 0.7 },
             },
           }}
-          className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+          className="mt-10 flex flex-col  sm:flex-row gap-4 justify-center"
         >
           <motion.button
             variants={{
@@ -110,6 +103,7 @@ export default function Hero() {
               text-white px-8 py-3 rounded-full
               font-semibold
               hover:scale-110 transition
+              shadow-lg shadow-orange-500/30
             "
           >
             Explore Our Expertise
@@ -120,15 +114,15 @@ export default function Hero() {
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0 },
             }}
-           onClick={() =>
-    document.getElementById("services")?.scrollIntoView({
-      behavior: "smooth",
-    })
-  }
+            onClick={() =>
+              document.getElementById("services")?.scrollIntoView({
+                behavior: "smooth",
+              })
+            }
             className="
-              border border-orange-400 text-white
+              border border-white text-white
               px-8 py-3 rounded-full font-semibold
-              hover:bg-orange-500 hover:text-black
+              hover:bg-white hover:text-black
               transition
             "
           >

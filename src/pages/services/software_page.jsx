@@ -20,10 +20,10 @@ export default function SoftwareDevPage() {
       group flex items-center gap-2
       px-4 py-2
       rounded-full
-      border border-black
+      border border-white
       bg-white/5 backdrop-blur-md
       text-sm font-semibold
-      text-black
+      text-white
 
       hover:text-orange-400
       hover:border-orange-400/60
@@ -41,40 +41,35 @@ export default function SoftwareDevPage() {
 
 
         {/* ================= HERO ================= */}
-        <section className="grid md:grid-cols-2 min-h-[55vh]">
+       <section
+  className="
+    relative min-h-[65vh]
+    flex items-center justify-center
+    bg-cover bg-center
+    px-6
+  "
+  style={{
+    backgroundImage:
+      "url('/Background 2.jpg')",
+  }}
+>
+  {/* Dark overlay for readability */}
+  {/* <div className="absolute inset-0 bg-black/60"></div> */}
 
-          {/* LEFT */}
-          <div
-            className="
-              flex flex-col justify-center px-10 py-20
-              bg-gradient-to-br from-slate-100 to-slate-200
-              animate-hero
-            "
-          >
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-4 mt-14 leading-tight">
-              Build Software <br />
-              <span className="text-orange-600">That Scales</span>
-            </h1>
+  {/* Content */}
+  <div className="relative z-10 max-w-4xl text-center animate-hero">
+    <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-black">
+      Build Software <br />
+      <span className="text-orange-400">That Scales</span>
+    </h1>
 
-            <p className="text-slate-700 text-lg max-w-xl">
-              From concept to deployment, we engineer secure, scalable and
-              future-ready software solutions tailored to your business.
-            </p>
-          </div>
+    <p className="text-base md:text-lg text-black max-w-3xl mx-auto leading-relaxed">
+      From concept to deployment, we engineer secure, scalable, and future-ready
+      software solutions tailored to your business.
+    </p>
+  </div>
+</section>
 
-          {/* RIGHT IMAGE */}
-          <div className="relative overflow-hidden h-[320px] md:h-auto">
-            <img
-              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c"
-              alt="Software Development"
-              className="
-                absolute inset-0 w-full h-full object-cover
-                transition-transform duration-700
-                hover:scale-[1.04]
-              "
-            />
-          </div>
-        </section>
 
         {/* ================= FEATURES ================= */}
         <section className="py-16 px-4 bg-white">
