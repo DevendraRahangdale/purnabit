@@ -5,7 +5,7 @@ const services = [
   {
     title: "Database Consulting",
     desc: "We design, optimize, and manage secure, high-performance databases that scale with your business.",
-    image: "/database.png",
+    image: "/database1.png",
     link: "/services/database",
   },
   {

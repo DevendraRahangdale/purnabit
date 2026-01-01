@@ -3,7 +3,8 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-   <footer className="bg-black text-white pt-6 pb-4">
+ <footer className="bg-gray-800 text-white pt-6 pb-4">
+
 
 
       
@@ -40,11 +41,13 @@ export default function Footer() {
 
         {/* LOGO */}
         <div className="flex items-center gap-2">
-          <img
-            src="/logowhite.png"
-            alt="purnabit-logo"
-            className="w-[180px] h-auto object-contain"
-          />
+          <a href="/">
+            <img
+              src="/logowhite.png"
+              alt="PurnaBIT Logo"
+              className="w-[175px] h-auto object-contain"
+            />
+          </a>
         </div>
 
       </div>

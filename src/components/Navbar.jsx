@@ -16,121 +16,110 @@ const CloseIcon = () => (
   </svg>
 );
 
+/* NAV ITEMS */
 const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  {
-    name: "Blogs",
-    // href: "https://purnabit.blogspot.com",
-    external: true,
-  },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/#about" },
+  { name: "Services", href: "/#services" },
+  { name: "Blogs", disabled: true }, // 👈 NO ACTION
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [activeHash, setActiveHash] = useState("#home");
+  const [activeHash, setActiveHash] = useState("/");
 
-  /* Scroll effect */
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  /* Active hash */
-  useEffect(() => {
-    const updateHash = () =>
-      setActiveHash(window.location.hash || "#home");
-    updateHash();
-    window.addEventListener("hashchange", updateHash);
-    return () => window.removeEventListener("hashchange", updateHash);
-  }, []);
-
-  /* Close menu on resize */
+  /* Close mobile menu on resize */
   useEffect(() => {
     const resize = () => window.innerWidth >= 768 && setOpen(false);
     window.addEventListener("resize", resize);
     return () => window.removeEventListener("resize", resize);
   }, []);
 
+  /* Track hash for active state */
+  useEffect(() => {
+    const updateHash = () => {
+      const hash = window.location.hash || "/";
+      setActiveHash(hash);
+    };
+    updateHash();
+    window.addEventListener("hashchange", updateHash);
+    return () => window.removeEventListener("hashchange", updateHash);
+  }, []);
+
   return (
     <>
       {/* ================= NAVBAR ================= */}
-      <nav
-        className={`
-          fixed top-0 w-full z-50 transition-all duration-300 border-b
-          ${
-            scrolled
-              ? "bg-white text-black border-gray-200"
-              : "bg-transparent text-white border-transparent"
-          }
-        `}
-      >
+      <nav className="fixed top-0 w-full z-50 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-8 md:px-16 py-5 flex items-center justify-between">
 
           {/* LOGO */}
-          <img
-            src={scrolled ? "/logoblack.png" : "/logowhite.png"}
-            alt="PurnaBIT Logo"
-            className="w-[175px] h-auto object-contain"
-          />
+          <a href="/">
+            <img
+              src="/logoblack.png"
+              alt="PurnaBIT Logo"
+              className="w-[175px] h-auto object-contain"
+            />
+          </a>
 
           {/* DESKTOP MENU */}
           <ul className="hidden md:flex items-center gap-14 text-sm font-semibold tracking-widest">
             {navItems.map((item) => (
               <li key={item.name} className="relative group">
-                <a
-  href={item.href}
-  target={item.external ? "_blank" : "_self"}
-  rel={item.external ? "noopener noreferrer" : undefined}
-  className={`
-    transition-colors duration-300
-    ${
-      !item.external && activeHash === item.href
-        ? "text-[#F6C445]"
-        : scrolled
-        ? "text-black hover:text-[#F6C445]"
-        : "text-white hover:text-[#F6C445]"
-    }
-  `}
->
 
-                  {item.name.toUpperCase()}
-                </a>
+                {/* ✅ LINK OR BUTTON */}
+                {item.disabled ? (
+                  <button
+                    type="button"
+                    aria-disabled="true"
+                    className="cursor-default text-black hover:text-[#e93f07]"
+                  >
+                    {item.name.toUpperCase()}
+                  </button>
+                ) : (
+                  <a
+                    href={item.href}
+                    className="text-black hover:text-[#e93f07] transition-colors"
+                  >
+                    {item.name.toUpperCase()}
+                  </a>
+                )}
 
-                {/* underline */}
-                <span
-  className={`
-    absolute left-0 -bottom-2 h-[2px]
-    bg-gradient-to-r from-[#F6C445] to-[#F28C28]
-    transition-all duration-300
-    ${
-      !item.external && activeHash === item.href
-        ? "w-full"
-        : "w-0 group-hover:w-full"
-    }
-  `}
-/>
-
+                {/* underline only for links */}
+                {!item.disabled && (
+                  <span
+                    className={`
+                      absolute left-0 -bottom-2 h-[2px]
+                      bg-gradient-to-r from-[#eb0b0b] to-[#d108b6]
+                      transition-all duration-300
+                      ${
+                        activeHash === item.href.replace("/", "") ||
+                        (item.href === "/" && activeHash === "/")
+                          ? "w-full"
+                          : "w-0 group-hover:w-full"
+                      }
+                    `}
+                  />
+                )}
               </li>
             ))}
           </ul>
 
           {/* CTA */}
           <a
-            href="#contact"
-            className="hidden md:inline-block rounded-full
-            bg-gradient-to-r from-[#e2430e] to-[#ac0360]
-            px-7 py-2 text-sm font-semibold text-white hover:scale-105 transition text-black "
+            href="/#contact"
+            className="
+              hidden md:inline-block rounded-full
+              bg-gradient-to-r from-[#e2430e] to-[#ac0360]
+              px-7 py-2 text-sm font-semibold text-white
+              hover:scale-105 transition
+            "
           >
             Contact Our Team
           </a>
 
           {/* HAMBURGER */}
-          <button onClick={() => setOpen(true)} className="md:hidden">
+          <button onClick={() => setOpen(true)} className="md:hidden text-black">
             <MenuIcon />
           </button>
         </div>
@@ -144,11 +133,7 @@ export default function Navbar() {
         >
           <aside
             onClick={(e) => e.stopPropagation()}
-            className="
-              absolute right-4 top-6 w-72
-              rounded-3xl bg-white/95 backdrop-blur-xl
-              shadow-2xl animate-slideIn
-            "
+            className="absolute right-4 top-6 w-72 rounded-3xl bg-white shadow-2xl"
           >
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-5 border-b">
@@ -162,20 +147,31 @@ export default function Navbar() {
             <ul className="px-6 py-6 space-y-5 text-sm font-semibold tracking-widest">
               {navItems.map((item) => (
                 <li key={item.name} className="group">
-                  <a
-  href={item.href}
-  target={item.external ? "_blank" : "_self"}
-  rel={item.external ? "noopener noreferrer" : undefined}
-  onClick={() => setOpen(false)}
-  className="flex justify-between items-center py-2 hover:text-[#F6C445] transition"
->
 
-                    {item.name.toUpperCase()}
-                    <span className="opacity-0 group-hover:opacity-100 transition">
-                      →
-                    </span>
-                  </a>
-                  <div className="h-[2px] w-0 bg-gradient-to-r from-[#F6C445] to-[#F28C28] group-hover:w-full transition-all duration-300" />
+                  {item.disabled ? (
+                    <button
+                      type="button"
+                      aria-disabled="true"
+                      className="w-full text-left py-2 text-gray-400 cursor-default"
+                    >
+                      {item.name.toUpperCase()}
+                    </button>
+                  ) : (
+                    <a
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className="flex justify-between items-center py-2 hover:text-[#e93f07] transition"
+                    >
+                      {item.name.toUpperCase()}
+                      <span className="opacity-0 group-hover:opacity-100 transition">
+                        →
+                      </span>
+                    </a>
+                  )}
+
+                  {!item.disabled && (
+                    <div className="h-[2px] w-0 bg-gradient-to-r from-[#eb0b0b] to-[#d108b6] group-hover:w-full transition-all duration-300" />
+                  )}
                 </li>
               ))}
             </ul>
@@ -183,11 +179,14 @@ export default function Navbar() {
             {/* CTA */}
             <div className="px-6 pb-6">
               <a
-                href="#contact"
+                href="/#contact"
                 onClick={() => setOpen(false)}
-                className="block w-full text-center rounded-full
-                bg-gradient-to-r from-[#e2430e] to-[#ac0360]
-                py-3 font-semibold text-white hover:scale-105 transition text-black"
+                className="
+                  block w-full text-center rounded-full
+                  bg-gradient-to-r from-[#e2430e] to-[#ac0360]
+                  py-3 font-semibold text-white
+                  hover:scale-105 transition
+                "
               >
                 Contact Our Team
               </a>

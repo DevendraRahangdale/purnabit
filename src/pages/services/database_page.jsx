@@ -1,13 +1,47 @@
 // DatabasePage.jsx
 // ✅ React-compatible version (NO next/image)
-
-import Footer from "../../../components/Footer";
+import { useNavigate } from "react-router-dom"
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 
 export default function DatabasePage() {
+    const navigate = useNavigate(); 
   return (
+    <>
+    <Navbar/>
     <main className="bg-[#f8fafc] text-gray-900 overflow-x-hidden">
+
+        {/* 🔙 BACK BUTTON (TOP LEFT) */}
+<div className="absolute top-28 left-6 md:left-8 z-50">
+  <button
+    onClick={() => navigate(-1)}
+    className="
+      group flex items-center gap-2
+      px-4 py-2
+      rounded-full
+      border border-black
+      bg-white/5 backdrop-blur-md
+      text-sm font-semibold
+      text-black
+
+      hover:text-orange-400
+      hover:border-orange-400/60
+      hover:bg-orange-400/10
+
+      transition-all duration-300 ease-out
+    "
+  >
+    <span className="transform transition-transform duration-300 group-hover:-translate-x-1">
+      ←
+    </span>
+    <span className="hidden sm:inline">Back</span>
+  </button>
+</div>
+
+
+        
       {/* ================= HERO ================= */}
-      <section className="relative h-[50vh] w-full overflow-hidden">
+      <section className="relative h-[60vh] w-full overflow-hidden">
         {/* BACKGROUND IMAGE */}
         <img
           src="/banner.png"
@@ -427,6 +461,7 @@ export default function DatabasePage() {
 
         <Footer />
     </main>
+    </>
   );
 }
 

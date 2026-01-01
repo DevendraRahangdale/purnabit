@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -8,31 +10,30 @@ export default function About() {
         relative min-h-screen
         bg-gradient-to-b from-white via-[#fffaf3] to-white
         px-6 md:px-16 py-16
-        overflow-hidden
       "
     >
       {/* SOFT BACKGROUND ACCENT */}
-      <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#F6C445]/20 rounded-full blur-3xl" />
+      <div className="pointer-events-none absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#F6C445]/20 rounded-full blur-3xl" />
 
       {/* TITLE */}
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.3 }}
         className="text-center mb-24"
       >
         <h2 className="text-3xl md:text-5xl font-extrabold tracking-wide text-[#1A1A1A]">
           ABOUT <span className="text-orange-600">PurnaBIT</span>
         </h2>
 
-        <div className="mt-2 h-[4px] w-24 bg-gradient-to-r from-[#F6C445] to-[#F28C28] mx-auto rounded-full" />
+        <div className="mt-3 h-[4px] w-24 bg-gradient-to-r from-[#F6C445] to-[#F28C28] mx-auto rounded-full" />
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg"
         >
           Building technology that empowers businesses to grow, innovate, and
@@ -47,13 +48,13 @@ export default function About() {
           initial={{ opacity: 0, x: -80 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           className="relative w-full h-[320px] md:h-[420px] rounded-2xl overflow-hidden shadow-2xl group"
         >
           <img
             src="/about.png"
             alt="Technology & Business"
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700"
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
 
           {/* IMAGE OVERLAY */}
@@ -65,7 +66,7 @@ export default function About() {
           initial={{ opacity: 0, x: 80 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <h3 className="text-2xl md:text-4xl font-extrabold text-[#ac0360] mb-6">
             Our Mission
@@ -87,12 +88,13 @@ export default function About() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             className="
               mt-10 p-8 rounded-2xl
               bg-white/70 backdrop-blur-md
               border border-[#F6C445]/30
-              shadow-lg hover:shadow-xl transition
+              shadow-lg hover:shadow-xl
+              transition-shadow duration-300
             "
           >
             <p className="text-[#3E2A4F] font-semibold text-lg">
