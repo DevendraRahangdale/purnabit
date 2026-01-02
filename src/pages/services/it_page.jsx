@@ -20,10 +20,10 @@ export default function ITPage() {
       group flex items-center gap-2
       px-4 py-2
       rounded-full
-      border border-black
+      border border-white
       bg-white/5 backdrop-blur-md
       text-sm font-semibold
-      text-black
+      text-white
 
       hover:text-orange-400
       hover:border-orange-400/60
@@ -47,18 +47,18 @@ export default function ITPage() {
     bg-cover bg-center
     pt-28 pb-20
   "
-  style={{ backgroundImage: "url('/Background 1.jpg')" }}
+  style={{ backgroundImage: "url('/Background 3.jpg')" }}
 >
   {/* Dark overlay for text visibility */}
   {/* <div className="absolute inset-0 bg-black/65"></div> */}
 
   {/* Content */}
   <div className="relative z-10 max-w-4xl mx-auto px-6 text-center animate-fade-up">
-    <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-black">
+    <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-white">
       Enterprise <span className="text-orange-600">IT Services</span>
     </h1>
 
-    <p className="text-base md:text-lg text-black leading-relaxed max-w-3xl mx-auto">
+    <p className="text-base md:text-lg text-white leading-relaxed max-w-3xl mx-auto">
       We deliver reliable, secure, and scalable IT solutions that help
       organizations grow, improve operational efficiency, and achieve
       long-term digital transformation with confidence.
@@ -121,7 +121,7 @@ export default function ITPage() {
         </section>
 
         {/* ================= DELIVERY MODEL ================= */}
-        <section className="py-20 px-4 bg-[#faf1c6]">
+        <section className="py-20 px-4 bg-[#e0c6d6]">
           <div className="max-w-7xl mx-auto">
 
             <h2 className="text-4xl font-bold mb-8 animate-fade-up">
@@ -205,7 +205,7 @@ export default function ITPage() {
                   bg-white border border-slate-200
                   rounded-xl p-8
                   transition-all duration-300
-                  hover:border-blue-500 hover:shadow-lg
+                  hover:border-orange-600 hover:shadow-lg
                   hover:-translate-y-1
                 "
               >

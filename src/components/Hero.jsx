@@ -10,7 +10,7 @@ export default function Hero() {
         bg-cover bg-center scroll-mt-24
         overflow-hidden
       "
-      style={{ backgroundImage: "url('/Background 3.jpg')" }}
+      style={{ backgroundImage: "url('/Background 1.jpg')" }}
     >
       {/* Dark gradient overlay for readability */}
      
@@ -23,7 +23,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-xs tracking-widest text-white mb-4"
+          className="text-xs tracking-widest text-black mb-4"
         >
           DIGITAL TRANSFORMATION & TECHNOLOGY CONSULTING
         </motion.p>
@@ -38,7 +38,7 @@ export default function Hero() {
               transition: { staggerChildren: 0.15 },
             },
           }}
-          className="text-4xl md:text-6xl font-extrabold text-white leading-tight"
+          className="text-4xl md:text-6xl font-extrabold text-black leading-tight"
         >
           <motion.span
             variants={{
@@ -72,7 +72,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.4 }}
-          className="text-[clamp(1rem,1.1vw,1.125rem)] font-medium leading-loose text-white"
+          className="text-[clamp(1rem,1.1vw,1.125rem)] font-medium leading-loose text-black/80"
         >
           PurnaBIT is a technology consulting company that partners with
           organizations to design, build, and scale secure digital solutions.
@@ -120,7 +120,7 @@ export default function Hero() {
               })
             }
             className="
-              border border-white text-white
+              border border-white text-black
               px-8 py-3 rounded-full font-semibold
               hover:bg-white hover:text-black
               transition
