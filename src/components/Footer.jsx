@@ -13,10 +13,10 @@ export default function Footer() {
 
         {/* SOCIAL ICONS */}
         <div className="flex gap-6 text-2xl">
-          <FaLinkedin className="cursor-pointer hover:text-orange-700 duration-200" />
-          <FaXTwitter className="cursor-pointer hover:text-orange-700 duration-200" />
-          <FaFacebook className="cursor-pointer hover:text-orange-700 duration-200" />
-          <FaInstagram className="cursor-pointer hover:text-orange-700 duration-200" />
+          <FaLinkedin className="cursor-pointer hover:text-[#008080] duration-200" />
+          <FaXTwitter className="cursor-pointer hover:text-[#008080] duration-200" />
+          <FaFacebook className="cursor-pointer hover:text-[#008080] duration-200" />
+          <FaInstagram className="cursor-pointer hover:text-[#008080] duration-200" />
         </div>
 
         {/* COPYRIGHT + LINKS */}
@@ -43,7 +43,7 @@ export default function Footer() {
         <div className="flex items-center gap-2">
           <a href="/">
             <img
-              src="/logowhite.png"
+              src="/white_logo.png"
               alt="PurnaBIT Logo"
               className="w-[175px] h-auto object-contain"
             />

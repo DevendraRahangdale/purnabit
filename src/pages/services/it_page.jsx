@@ -12,24 +12,28 @@ export default function ITPage() {
 
       <main className="relative bg-slate-50 text-slate-900">
 
-       {/* 🔙 BACK BUTTON (TOP LEFT) */}
-<div className="absolute top-28 left-6 md:left-8 z-50">
+        {/* 🔙 BACK BUTTON (TOP LEFT) */}
+<div className="
+  absolute
+  top-16 md:top-6
+  left-2 md:left-10
+  z-50
+">
   <button
     onClick={() => navigate(-1)}
     className="
       group flex items-center gap-2
-      px-4 py-2
+      px-2 py-1
       rounded-full
-      border border-white
-      bg-white/5 backdrop-blur-md
-      text-sm font-semibold
-      text-white
+      border border-slate-300
+      bg-white/80 backdrop-blur-md
+      text-sm font-semibold text-slate-800
 
-      hover:text-orange-400
-      hover:border-orange-400/60
-      hover:bg-orange-400/10
+      hover:text-[#008080]
+      hover:border-[#008080]
+      hover:bg-[#e6f7f5]
 
-      transition-all duration-300 ease-out
+      transition-all duration-300
     "
   >
     <span className="transform transition-transform duration-300 group-hover:-translate-x-1">
@@ -47,18 +51,18 @@ export default function ITPage() {
     bg-cover bg-center
     pt-28 pb-20
   "
-  style={{ backgroundImage: "url('/Background 3.jpg')" }}
+  style={{ backgroundImage: "url('/it_banner.png')" }}
 >
   {/* Dark overlay for text visibility */}
   {/* <div className="absolute inset-0 bg-black/65"></div> */}
 
   {/* Content */}
   <div className="relative z-10 max-w-4xl mx-auto px-6 text-center animate-fade-up">
-    <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-white">
-      Enterprise <span className="text-orange-600">IT Services</span>
+    <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-black">
+      Enterprise <span className="text-[#008080]">IT Services</span>
     </h1>
 
-    <p className="text-base md:text-lg text-white leading-relaxed max-w-3xl mx-auto">
+    <p className="text-base md:text-lg text-black leading-relaxed max-w-3xl mx-auto">
       We deliver reliable, secure, and scalable IT solutions that help
       organizations grow, improve operational efficiency, and achieve
       long-term digital transformation with confidence.
@@ -68,7 +72,7 @@ export default function ITPage() {
 
 
         {/* ================= SECTION 1 ================= */}
-        <section className="py-20 px-6 bg-white">
+        <section className="py-20 px-6 bg-[#def9f6]">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
 
             <div className="animate-fade-up">
@@ -121,7 +125,7 @@ export default function ITPage() {
         </section>
 
         {/* ================= DELIVERY MODEL ================= */}
-        <section className="py-20 px-4 bg-[#e0c6d6]">
+        <section className="py-20 px-4 bg-[#d4e8f8]">
           <div className="max-w-7xl mx-auto">
 
             <h2 className="text-4xl font-bold mb-8 animate-fade-up">
@@ -161,7 +165,7 @@ export default function ITPage() {
                     hover:-translate-y-2 hover:shadow-xl
                   "
                 >
-                  <div className="h-12 bg-gradient-to-r from-orange-600 to-purple-600" />
+                  <div className="h-12 bg-gradient-to-r from-[#008080] to-[#15dbf6]" />
                   <div className="p-8">
                     <h3 className="text-2xl font-semibold mb-4">
                       {item.title}
@@ -178,7 +182,7 @@ export default function ITPage() {
         </section>
 
         {/* ================= SERVICES ================= */}
-        <section className="py-20 px-4 bg-white">
+        <section className="py-20 px-4 bg-[#e1edf6]">
           <h2 className="text-4xl font-bold text-center mb-16 animate-fade-up">
             Our IT Capabilities
           </h2>
@@ -205,8 +209,8 @@ export default function ITPage() {
                   bg-white border border-slate-200
                   rounded-xl p-8
                   transition-all duration-300
-                  hover:border-orange-600 hover:shadow-lg
-                  hover:-translate-y-1
+                  hover:border-[#008080] hover:shadow-lg border-2xl
+                  hover:-translate-y-2
                 "
               >
                 <h3 className="text-xl font-semibold mb-4">
@@ -222,31 +226,47 @@ export default function ITPage() {
         </section>
 
         {/* ================= CTA ================= */}
-        <section className="py-20 bg-slate-100 text-center">
-          <h2 className="text-4xl font-bold mb-6 animate-fade-up">
-            Partner With Us for Reliable IT
-          </h2>
+       <section className="relative py-24 text-center overflow-hidden">
+  
+  {/* BACKGROUND IMAGE */}
+  <img
+    src="/it_grid.png"   // 
+    alt="IT Background"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
 
-          <p className="max-w-2xl mx-auto text-slate-600 mb-10 animate-fade-up">
-            Talk to our IT specialists to design secure, scalable,
-            and future-ready technology solutions.
-          </p>
+  {/* OVERLAY (for text readability) */}
+  {/* <div className="absolute inset-0 bg-white/80 md:bg-white/70" /> */}
 
-          <button
-            className="
-              group px-10 py-4 bg-orange-600 text-white
-              font-semibold rounded-md
-              hover:bg-orange-700 hover:shadow-lg
-              transition-all duration-300
-            "
-          >
-            Get in Touch
-            <span className="inline-block ml-2 group-hover:translate-x-1 transition">
-              →
-            </span>
-          </button>
-        </section>
+  {/* CONTENT */}
+  <div className="relative z-10 px-6">
+    <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-up text-white">
+      Partner With Us for Reliable IT
+    </h2>
 
+    <p className="max-w-2xl mx-auto text-white mb-10 text-lg animate-fade-up">
+      Talk to our IT specialists to design secure, scalable,
+      and future-ready technology solutions.
+    </p>
+
+    <button
+      className="
+        group px-10 py-4
+        bg-[#008080] text-white
+        font-semibold rounded-md
+        hover:bg-[#006b6b] hover:shadow-lg
+        transition-all duration-300
+      "
+    >
+      Get in Touch
+      <span className="inline-block ml-2 group-hover:translate-x-1 transition">
+        →
+      </span>
+    </button>
+  </div>
+</section>
+
+  <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-slate-400 to-transparent" />
       </main>
 
       <Footer />

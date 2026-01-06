@@ -13,23 +13,27 @@ export default function SoftwareDevPage() {
       <main className="relative text-slate-900 bg-slate-50 overflow-hidden">
 
         {/* 🔙 BACK BUTTON (TOP LEFT) */}
-<div className="absolute top-28 left-6 md:left-8 z-50">
+<div className="
+  absolute
+  top-16 md:top-6
+  left-2 md:left-10
+  z-50
+">
   <button
     onClick={() => navigate(-1)}
     className="
       group flex items-center gap-2
-      px-4 py-2
+      px-2 py-1
       rounded-full
-      border border-white
-      bg-white/5 backdrop-blur-md
-      text-sm font-semibold
-      text-white
+      border border-slate-300
+      bg-white/80 backdrop-blur-md
+      text-sm font-semibold text-slate-800
 
-      hover:text-orange-400
-      hover:border-orange-400/60
-      hover:bg-orange-400/10
+      hover:text-[#008080]
+      hover:border-[#008080]
+      hover:bg-[#e6f7f5]
 
-      transition-all duration-300 ease-out
+      transition-all duration-300
     "
   >
     <span className="transform transition-transform duration-300 group-hover:-translate-x-1">
@@ -38,6 +42,8 @@ export default function SoftwareDevPage() {
     <span className="hidden sm:inline">Back</span>
   </button>
 </div>
+
+
 
 
         {/* ================= HERO ================= */}
@@ -50,7 +56,7 @@ export default function SoftwareDevPage() {
   "
   style={{
     backgroundImage:
-      "url('/Background 2.jpg')",
+      "url('/software_banner.png')",
   }}
 >
   {/* Dark overlay for readability */}
@@ -60,7 +66,7 @@ export default function SoftwareDevPage() {
   <div className="relative z-10 max-w-4xl text-center animate-hero">
     <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-black">
       Build Software <br />
-      <span className="text-orange-400">That Scales</span>
+      <span className="text-[#14545b]">That Scales</span>
     </h1>
 
     <p className="text-base md:text-lg text-black max-w-3xl mx-auto leading-relaxed">
@@ -72,7 +78,7 @@ export default function SoftwareDevPage() {
 
 
         {/* ================= FEATURES ================= */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-[#f0f8f9]">
   <h2 className="text-center text-4xl font-extrabold mb-12 animate-reveal">
     What We Build
   </h2>
@@ -101,12 +107,12 @@ export default function SoftwareDevPage() {
           transition-all duration-300
           hover:-translate-y-2
           hover:shadow-xl
-          hover:border-orange-500
+          hover:border-[#008080]
           animate-reveal delay-100
         "
       >
         {/* TOP BOLD LINE */}
-        <div className="h-1 w-full bg-gradient-to-r from-orange-500 to-blue-500 rounded-t-2xl" />
+        <div className="h-1 w-full bg-gradient-to-r from-[#008080] to-[#15dbf6] rounded-t-2xl" />
 
         {/* CONTENT */}
         <div className="p-8">
@@ -124,7 +130,7 @@ export default function SoftwareDevPage() {
 
 
         {/* ================= AGILE ================= */}
-        <section className="py-18 px-10 bg-slate-100 grid md:grid-cols-2 gap-14 items-center">
+        <section className="py-18 px-10 bg-[#e5e8f8] grid md:grid-cols-2 gap-14 items-center">
 
           <div className="relative h-[300px] rounded-xl overflow-hidden shadow-lg animate-reveal">
             <img
@@ -164,7 +170,7 @@ export default function SoftwareDevPage() {
 
           <div className="relative h-[300px] rounded-xl overflow-hidden shadow-lg animate-reveal">
             <img
-              src="https://images.unsplash.com/photo-1531482615713-2afd69097998"
+              src="/futureTech.png"
               alt="Modern Tech"
               className="
                 absolute inset-0 w-full h-full object-cover

@@ -10,7 +10,7 @@ export default function Hero() {
         bg-cover bg-center scroll-mt-24
         overflow-hidden
       "
-      style={{ backgroundImage: "url('/Background 1.jpg')" }}
+      style={{ backgroundImage: "url('/heroimg.png')" }}
     >
       {/* Dark gradient overlay for readability */}
      
@@ -60,7 +60,7 @@ export default function Hero() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="text-orange-600"
+              className="text-transparent text-[#008080]"
             >
               intelligent technology
             </motion.span>
@@ -93,21 +93,21 @@ export default function Hero() {
           }}
           className="mt-10 flex flex-col  sm:flex-row gap-4 justify-center"
         >
-          <motion.button
+          {/* <motion.button
             variants={{
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0 },
             }}
             className="
-              bg-gradient-to-r from-[#e2430e] to-[#ac0360]
+              bg-gradient-to-r from-[#0b29eb] to-[#15dbf6]
               text-white px-8 py-3 rounded-full
               font-semibold
               hover:scale-110 transition
-              shadow-lg shadow-orange-500/30
+              shadow-lg shadow-blue-500/30
             "
           >
             Explore Our Expertise
-          </motion.button>
+          </motion.button> */}
 
           <motion.button
             variants={{
@@ -120,10 +120,11 @@ export default function Hero() {
               })
             }
             className="
-              border border-white text-black
-              px-8 py-3 rounded-full font-semibold
-              hover:bg-white hover:text-black
-              transition
+              bg-gradient-to-r from-[#008080] to-[#15dbf6]
+              text-white px-8 py-3 rounded-full
+              font-semibold
+              hover:scale-110 transition
+              shadow-lg shadow-blue-500/30
             "
           >
             View Our Services →

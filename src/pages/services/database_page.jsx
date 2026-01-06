@@ -11,24 +11,30 @@ export default function DatabasePage() {
     <Navbar/>
     <main className="bg-[#f8fafc] text-gray-900 overflow-x-hidden">
 
-        {/* 🔙 BACK BUTTON (TOP LEFT) */}
-<div className="absolute top-28 left-6 md:left-8 z-50">
+
+
+{ /* 🔙 BACK BUTTON (TOP LEFT) */}
+<div className="
+  absolute
+  top-16 md:top-6
+  left-2 md:left-10
+  z-50
+">
   <button
     onClick={() => navigate(-1)}
     className="
       group flex items-center gap-2
-      px-4 py-2
+      px-2 py-1
       rounded-full
-      border border-black
-      bg-white/5 backdrop-blur-md
-      text-sm font-semibold
-      text-black
+      border border-slate-300
+      bg-white/80 backdrop-blur-md
+      text-sm font-semibold text-slate-800
 
-      hover:text-orange-400
-      hover:border-orange-400/60
-      hover:bg-orange-400/10
+      hover:text-[#008080]
+      hover:border-[#008080]
+      hover:bg-[#e6f7f5]
 
-      transition-all duration-300 ease-out
+      transition-all duration-300
     "
   >
     <span className="transform transition-transform duration-300 group-hover:-translate-x-1">
@@ -38,39 +44,62 @@ export default function DatabasePage() {
   </button>
 </div>
 
+{/* ================= HERO ================= */}
+<section className="
+  relative
+  h-[75vh] md:h-[65vh]
+  w-full
+  overflow-hidden
+  bg-[#f8fafc]
+">
 
-        
-      {/* ================= HERO ================= */}
-      <section className="relative h-[60vh] w-full overflow-hidden">
-        {/* BACKGROUND IMAGE */}
-        <img
-          src="/banner.png"
-          alt="Database Infrastructure"
-          className="absolute inset-0 w-full h-full object-contain"
-        />
+  <img
+    src="/database_banner.png"
+    alt="Database Infrastructure"
+    className="absolute inset-0 w-full h-full object-cover object-right"
+  />
 
-        {/* DARK OVERLAY */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/20 to-[#0f172a]/20" />
+  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/20" />
 
-        {/* CONTENT */}
-        <div className="relative z-10 h-full flex items-center">
-          <div className="w-full max-w-7xl mx-auto px-4 md:px-2">
-            <div className="w-full md:w-[55%] lg:w-[50%]">
-              <h1 className="text-4xl md:text-6xl font-extrabold text-black leading-tight animate-slideUp">
-                Database{" "}
-                <span className="text-orange-600">Services & Solutions</span>
-              </h1>
+  <div className="
+    relative z-10 h-full
+    flex items-start md:items-center
+    pt-28 md:pt-0
+  ">
+    <div className="w-full max-w-7xl mx-auto px-6 md:px-10">
+      <div className="w-full md:w-[60%] lg:w-[55%]">
 
-              <p className="mt-4 text-lg md:text-xl text-black font-semibold leading-relaxed animate-slideUp delay-150">
-                Expert database management, optimization, and monitoring
-                solutions for MySQL, PostgreSQL, MariaDB, and cloud databases.
-                Specializing in HA setups, performance tuning, disaster
-                recovery, and Kubernetes deployments.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+        <h1 className="
+          text-3xl sm:text-4xl md:text-6xl
+          font-extrabold
+          text-slate-900
+          leading-tight
+        ">
+          Database{" "}
+          <span className="text-[#008080]">
+            Services & Solutions
+          </span>
+        </h1>
+
+        <p className="
+          mt-4 md:mt-6
+          text-base sm:text-lg md:text-xl
+          text-slate-700
+          font-medium
+          leading-relaxed
+        ">
+          Expert database management, optimization, and monitoring solutions for
+          MySQL, PostgreSQL, MariaDB, and cloud databases. Specializing in
+          high-availability setups, performance tuning, disaster recovery, and
+          Kubernetes deployments.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       {/* ================= CORE EXPERTISE ================= */}
       <section className="bg-[#f7fafc] py-28 px-6 md:px-16">
@@ -406,56 +435,115 @@ export default function DatabasePage() {
       </section>
 
       {/* ================= FINAL CTA ================= */}
-     <section className="relative py-10 px-6 md:px-16 bg-gradient-to-br from-[#0f172a] via-[#020617] to-[#0b1220] text-white">
-        <div className="max-w-6xl mx-auto text-center">
-          {/* HEADING */}
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-6">
-            Ready to Optimize Your{" "}
-            <span className="text-orange-600">Database Infrastructure?</span>
-          </h2>
+     <section className="
+  relative
+  py-12 px-6 md:px-16
+  bg-gradient-to-b from-[#f8fafc] via-white to-[#f9fafb]
+  text-slate-900
+">
+  <div className="max-w-6xl mx-auto text-center">
 
-          {/* DESCRIPTION */}
-          <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/80 leading-relaxed mb-14">
-            Contact us for a comprehensive database assessment and customized
-            solution proposal. We provide
-            expert consultation for all your database needs.
-          </p>
+    {/* HEADING */}
+    <h2 className="text-3xl md:text-5xl font-extrabold mb-6">
+      Ready to Optimize Your{" "}
+      <span className="text-[#008080]">
+        Database Infrastructure?
+      </span>
+    </h2>
 
-          {/* CONTACT CARDS */}
-<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-  
-  {/* EMAIL */}
-  <div className="flex justify-center">
-    <div
-      className="flex items-center gap-4 bg-white/10 backdrop-blur-lg
-                 rounded-xl px-6 py-5 hover:bg-white/15 transition
-                 w-full max-w-md justify-center"
-    >
-      <span className="text-[#7cf3d0] text-2xl">✉</span>
-      <span className="text-lg font-medium">contact@purnabit.com</span>
-    </div>
-  </div>
+    {/* DESCRIPTION */}
+    <p className="
+      max-w-3xl mx-auto
+      text-lg md:text-xl
+      text-slate-600
+      leading-relaxed
+      mb-14
+    ">
+      Contact us for a comprehensive database assessment and a customized
+      solution proposal. We provide expert consultation for all your
+      database needs.
+    </p>
 
-  {/* WEBSITE */}
-  <div className="flex justify-center">
-    <div
-      className="flex items-center gap-4 bg-white/10 backdrop-blur-lg
-                 rounded-xl px-6 py-5 hover:bg-white/15 transition
-                 w-full max-w-md justify-center"
-    >
-      <span className="text-[#7cf3d0] text-2xl">🌐</span>
-      <span className="text-lg font-medium">www.purnabit.com</span>
-    </div>
-  </div>
+    {/* CONTACT CARDS */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
 
-</div>
+      {/* EMAIL */}
+      <div className="flex justify-center">
+        <div
+          className="
+            group
+            flex items-center gap-4
+            rounded-xl
+            px-6 py-5
+            w-full max-w-md
+            justify-center
+            border border-slate-200
+            bg-white
+            hover:border-[#008080]
+            hover:shadow-md
+            transition-all
+          "
+        >
+          {/* tally-style icon */}
+          <span className="
+            w-10 h-10
+            flex items-center justify-center
+            rounded-full
+            pointer-cursor
+            bg-[#008080]/10
+            text-[#008080]
+            font-bold
+          ">
+            @
+          </span>
 
-
-
-
-
+          <span className="text-lg font-medium text-slate-800">
+            contact@purnabit.com
+          </span>
         </div>
-      </section>
+      </div>
+
+      {/* WEBSITE */}
+      <div className="flex justify-center">
+        <div
+          className="
+            group
+            flex items-center gap-4
+            rounded-xl
+            px-6 py-5
+            w-full max-w-md
+            justify-center
+            pointer-cursor
+            border border-slate-200
+            bg-white
+            hover:border-[#008080]
+            hover:shadow-md
+            transition-all
+          "
+        >
+          {/* tally-style icon */}
+          <span className="
+            w-10 h-10
+            flex items-center justify-center
+            rounded-full
+              
+            bg-[#008080]/10
+            text-[#008080]
+            font-bold
+          ">
+            //
+          </span>
+
+          <span className="text-lg font-medium text-slate-800 pointer-cursor">
+            www.purnabit.com
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
      {/* code for white line */}
      <div className="h-px bg-white"></div>
 

@@ -5,14 +5,15 @@ export default function Contact({ onOpen }) {
     <section
       id="contact"
       className="
-        relative bg-[#F3EEF6]
+        relative bg-[#ecfbf7]
         px-6 md:px-16 py-24
         overflow-hidden scroll-mt-24
       "
     >
       {/* Decorative blur */}
-      <div className="absolute -top-32 -left-32 h-96 w-96 bg-[#F6C445]/20 rounded-full blur-3xl" />
-      <div className="absolute -bottom-32 -right-32 h-96 w-96 bg-[#F28C28]/20 rounded-full blur-3xl" />
+    <div className="absolute -top-32 -left-32 h-96 w-96 bg-[#9deeee] rounded-full blur-3xl" />
+
+      <div className="absolute -bottom-32 -right-32 h-96 w-96 bg-[#a7eeee] rounded-full blur-3xl" />
 
       {/* Content Card */}
       <motion.div
@@ -38,7 +39,7 @@ export default function Contact({ onOpen }) {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-extrabold tracking-wide mb-6"
         >
-          CONTACT <span className="text-orange-600">US</span>
+          CONTACT <span className="text-[#008080]">US</span>
         </motion.h2>
 
         {/* Subtitle */}
@@ -96,9 +97,9 @@ export default function Contact({ onOpen }) {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.6 }}
-            className="text-orange-600 font-medium"
+            className="text-[#008080] font-medium"
           >
-            info@purnabit.com
+            contact@purnabit.com
           </motion.p>
         </motion.div>
 

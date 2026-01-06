@@ -21,8 +21,8 @@ const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/#about" },
   { name: "Services", href: "/#services" },
-  { name: "Blogs", disabled: true }, // 👈 NO ACTION
-  { name: "Contact", href: "/#contact" },
+  { name: "Blogs", disabled: true }, // 
+  // { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -56,9 +56,9 @@ export default function Navbar() {
           {/* LOGO */}
           <a href="/">
             <img
-              src="/logoblack.png"
+              src="/logo.png"
               alt="PurnaBIT Logo"
-              className="w-[175px] h-auto object-contain"
+              className="w-[178px] h-auto object-contain"
             />
           </a>
 
@@ -72,14 +72,14 @@ export default function Navbar() {
                   <button
                     type="button"
                     aria-disabled="true"
-                    className="cursor-default text-black hover:text-[#e93f07]"
+                    className="cursor-default text-black hover:text-[#008080]"
                   >
                     {item.name.toUpperCase()}
                   </button>
                 ) : (
                   <a
                     href={item.href}
-                    className="text-black hover:text-[#e93f07] transition-colors"
+                    className="text-black hover:text-[#008080] transition-colors"
                   >
                     {item.name.toUpperCase()}
                   </a>
@@ -90,7 +90,7 @@ export default function Navbar() {
                   <span
                     className={`
                       absolute left-0 -bottom-2 h-[2px]
-                      bg-gradient-to-r from-[#eb0b0b] to-[#d108b6]
+                      bg-gradient-to-r from-[#008080] to-[#15dbf6]
                       transition-all duration-300
                       ${
                         activeHash === item.href.replace("/", "") ||
@@ -110,7 +110,7 @@ export default function Navbar() {
             href="/#contact"
             className="
               hidden md:inline-block rounded-full
-              bg-gradient-to-r from-[#e2430e] to-[#ac0360]
+              bg-gradient-to-r from-[#008080] to-[#15dbf6]
               px-7 py-2 text-sm font-semibold text-white
               hover:scale-105 transition
             "
@@ -124,6 +124,7 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
+      
 
       {/* ================= MOBILE MENU ================= */}
       {open && (
@@ -160,7 +161,7 @@ export default function Navbar() {
                     <a
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="flex justify-between items-center py-2 hover:text-[#e93f07] transition"
+                      className="flex justify-between items-center py-2 hover:text-[#008080] transition"
                     >
                       {item.name.toUpperCase()}
                       <span className="opacity-0 group-hover:opacity-100 transition">
@@ -170,7 +171,7 @@ export default function Navbar() {
                   )}
 
                   {!item.disabled && (
-                    <div className="h-[2px] w-0 bg-gradient-to-r from-[#eb0b0b] to-[#d108b6] group-hover:w-full transition-all duration-300" />
+                    <div className="h-[2px] w-0 bg-gradient-to-r from-[#008080] to-[#15dbf6] group-hover:w-full transition-all duration-300" />
                   )}
                 </li>
               ))}
@@ -183,7 +184,7 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className="
                   block w-full text-center rounded-full
-                  bg-gradient-to-r from-[#e2430e] to-[#ac0360]
+                  bg-gradient-to-r from-[#008080] to-[#15dbf6]
                   py-3 font-semibold text-white
                   hover:scale-105 transition
                 "
