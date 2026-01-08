@@ -10,7 +10,7 @@ const services = [
     desc: "We design, optimize, and manage secure, high-performance databases that scale with your business.",
     image: "/database_icon.png",
     link: "/services/database",
-    iconBg: "bg-blue-500",
+    iconBg: "bg-blue-900",
   },
   {
     title: "IT Services",

@@ -18,32 +18,37 @@ export default function ITPage() {
         transition={{ duration: 0.6 }}
         className="relative bg-slate-50 text-slate-900"
       >
-        {/* 🔙 BACK BUTTON */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="absolute top-16 md:top-6 left-2 md:left-10 z-50"
+        <div
+          className="
+  absolute
+  top-16 md:top-6
+  left-2 md:left-10
+  z-50
+"
         >
           <button
             onClick={() => navigate(-1)}
             className="
-              group flex items-center gap-2
-              px-2 py-1
-              rounded-full
-              border border-slate-300
-              bg-white/80 backdrop-blur-md
-              text-sm font-semibold text-slate-800
-              hover:text-[#008080]
-              hover:border-[#008080]
-              hover:bg-[#e6f7f5]
-              transition-all duration-300
-            "
+      group flex items-center gap-2
+      px-2 py-1
+      rounded-full
+      border border-slate-300
+      bg-white/80 backdrop-blur-md
+      text-sm font-semibold text-slate-800
+
+      hover:text-[#008080]
+      hover:border-[#008080]
+      hover:bg-[#e6f7f5]
+
+      transition-all duration-300
+    "
           >
-            <span className="group-hover:-translate-x-1 transition">←</span>
+            <span className="transform transition-transform duration-300 group-hover:-translate-x-1">
+              ←
+            </span>
             <span className="hidden sm:inline">Back</span>
           </button>
-        </motion.div>
+        </div>
 
         {/* ================= HERO ================= */}
         <section
