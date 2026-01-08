@@ -9,15 +9,11 @@ export default function Home() {
   return (
     <>
       <Navbar />
-
-
-        
-     <Hero />
-      <About/>
-<Services/>
-<Contact/>
-<Footer/>
-    
+      <Hero />
+      <About />
+      <Services />
+      <Contact />
+      <Footer />
     </>
   );
 }
